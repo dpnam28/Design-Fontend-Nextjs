@@ -23,9 +23,26 @@
 @utility flex-center {
   @apply flex justify-center items-center;
 }
+@utility moving {
+  animation: move 2s ease-in-out infinite alternate-reverse;
+}
+@keyframes move {
+  from {
+    transform: translateY(0) scale(0.98);
+  }
+  to {
+    transform: translateY(-15px);
+  }
+}
 
 @layer components {
   .btn-primary {
     @apply bg-login rounded-md px-4 py-1 text-white cursor-pointer;
+  }
+  .porfolio-card {
+    @apply border rounded-md max-md:w-[150px] max-md:h-[230px] w-70 h-90 relative bg-cover bg-center bg-no-repeat;
+  }
+  .porfolio-text {
+    @apply absolute text-gray-300 bottom-0 right-0 text-xl font-semibold lg:text-3xl;
   }
 }
