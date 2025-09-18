@@ -19,7 +19,13 @@ export default function Home() {
         />
       </div>
       <div className="flex-center">
-        <Image src={"/hero.png"} width={500} height={500} alt={"Hero image"} />
+        <Image
+          src={"/hero.png"}
+          width={500}
+          height={500}
+          alt={"Hero image"}
+          className="moving"
+        />
       </div>
     </div>
   );
