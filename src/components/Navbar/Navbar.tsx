@@ -1,9 +1,9 @@
 import Link from "next/link";
 import React from "react";
+import Button from "../Button/Button";
 
 const links = [
-  { id: 1, name: "Home", path: "/" },
-  { id: 5, name: "Porfolio", path: "/Porfolio" },
+  { id: 5, name: "Porfolio", path: "/porfolio" },
   { id: 4, name: "Blog", path: "/blog" },
   { id: 3, name: "Contact", path: "/contact" },
   { id: 2, name: "About", path: "/about" },
@@ -24,7 +24,7 @@ const Navbar = () => {
           </Link>
         ))}
 
-        <button className="btn-log">Login</button>
+        <Button name="Login" link="/dashboard/login" className="btn-primary" />
       </div>
     </div>
   );

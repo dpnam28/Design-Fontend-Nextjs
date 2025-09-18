@@ -1,3 +1,4 @@
+import Button from "@/components/Button/Button";
 import Image from "next/image";
 
 export default function Home() {
@@ -11,9 +12,11 @@ export default function Home() {
           Turning your idea into reality. We bring together the best designers,
           developers, and marketers to help your business grow.
         </p>
-        <button className="btn-log max-w-max text-md font-bold">
-          See our works
-        </button>
+        <Button
+          name="See our works"
+          link="/porfolio"
+          className="btn-primary font-semibold"
+        />
       </div>
       <div className="flex-center">
         <Image src={"/hero.png"} width={500} height={500} alt={"Hero image"} />
