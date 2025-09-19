@@ -2,7 +2,7 @@ import React from "react";
 import Image from "next/image";
 const Footer = () => {
   return (
-    <div className="py-4 flex justify-between items-center">
+    <div className="py-4 flex justify-between items-center mt-17">
       <div className="text-md font-semibold">&copy; Copyright 2025</div>
 
       <div className="flex-center gap-2">

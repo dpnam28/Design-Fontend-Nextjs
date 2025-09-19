@@ -14,13 +14,14 @@ export default function Home() {
         </p>
         <Button
           name="See our works"
-          link="/porfolio"
+          link="/portfolio"
           className="btn-primary font-semibold"
         />
       </div>
       <div className="flex-center">
         <Image
           src={"/hero.png"}
+          priority
           width={500}
           height={500}
           alt={"Hero image"}

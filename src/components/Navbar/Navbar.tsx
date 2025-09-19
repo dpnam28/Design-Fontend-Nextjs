@@ -3,7 +3,7 @@ import React from "react";
 import Button from "../Button/Button";
 
 const links = [
-  { id: 5, name: "Porfolio", path: "/porfolio" },
+  { id: 5, name: "Portfolio", path: "/portfolio" },
   { id: 4, name: "Blog", path: "/blog" },
   { id: 3, name: "Contact", path: "/contact" },
   { id: 2, name: "About", path: "/about" },
