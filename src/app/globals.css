@@ -39,10 +39,13 @@
   .btn-primary {
     @apply bg-login rounded-md px-4 py-1 text-white cursor-pointer;
   }
-  .porfolio-card {
+  .portfolio-card {
     @apply border rounded-md max-md:w-[150px] max-md:h-[230px] w-70 h-90 relative bg-cover bg-center bg-no-repeat;
   }
-  .porfolio-text {
+  .portfolio-text {
     @apply absolute text-gray-300 bottom-0 right-0 text-xl font-semibold lg:text-3xl;
+  }
+  .image-container {
+    @apply w-full relative h-100;
   }
 }
