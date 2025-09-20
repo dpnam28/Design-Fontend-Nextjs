@@ -1,6 +1,7 @@
 import Link from "next/link";
 import React from "react";
 import Button from "../Button/Button";
+import DarkModeToggle from "../DarkModeToggle/DarkModeToggle";
 
 const links = [
   { id: 5, name: "Portfolio", path: "/portfolio" },
@@ -17,14 +18,21 @@ const Navbar = () => {
         <h1>DesignX</h1>
       </Link>
 
-      <div className="flex gap-2 lg:gap-5 lg:text-lg max-sm:hidden text-sm font-semibold items-center">
-        {links.map((link) => (
-          <Link key={link.id} href={link.path}>
-            {link.name}
-          </Link>
-        ))}
+      <div className="flex items-baseline gap-3">
+        <DarkModeToggle />
+        <div className="flex gap-2 lg:gap-5 lg:text-lg max-sm:hidden text-sm font-semibold items-center">
+          {links.map((link) => (
+            <Link key={link.id} href={link.path}>
+              {link.name}
+            </Link>
+          ))}
 
-        <Button name="Login" link="/dashboard/login" className="btn-primary" />
+          <Button
+            name="Login"
+            link="/dashboard/login"
+            className="btn-primary"
+          />
+        </div>
       </div>
     </div>
   );

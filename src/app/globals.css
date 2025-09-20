@@ -36,6 +36,12 @@
 }
 
 @layer components {
+  .light {
+    @apply bg-white text-[#111];
+  }
+  .dark {
+    @apply bg-[#111] text-[#bbb];
+  }
   .btn-primary {
     @apply bg-login rounded-md px-4 py-1 text-white cursor-pointer;
   }
