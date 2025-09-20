@@ -1,3 +1,8 @@
+export const metadata = {
+  title: "DesignX - Portfolio",
+  description: "This is the portfolio page of DesignX.",
+};
+
 const layout = ({ children }: { children: React.ReactNode }) => {
   return (
     <div className="mt-17">
