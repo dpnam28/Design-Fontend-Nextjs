@@ -1,5 +1,12 @@
 import Button from "@/components/Button/Button";
+import { Metadata } from "next";
 import Image from "next/image";
+
+export const metadata: Metadata = {
+  title: "DesignX - Contact",
+  description: "This is contact page",
+};
+
 const page = () => {
   return (
     <div className="w-full flex flex-col items-center">
