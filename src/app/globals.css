@@ -54,4 +54,7 @@
   .image-container {
     @apply w-full relative h-100;
   }
+  .auth-input {
+    @apply min-w-[400px] rounded-sm p-3 border border-gray-500 text-lg;
+  }
 }

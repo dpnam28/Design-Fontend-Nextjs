@@ -2,7 +2,12 @@
 
 import React from "react";
 import useSWR from "swr";
+import { useSession } from "next-auth/react";
 const Page = () => {
+  const session = useSession();
+
+  console.log(session);
+
   const fetcher = (...args: [RequestInfo, RequestInit?]) =>
     fetch(...args).then((res) => res.json());
   const { data } = useSWR(
@@ -10,7 +15,6 @@ const Page = () => {
     fetcher
   );
 
-  console.log(data);
   return <div>Page</div>;
 };
 
