@@ -7,13 +7,12 @@ import React from "react";
 import { useState } from "react";
 const Page = () => {
   const [err, setErr] = useState(false);
+  const [username, setUsername] = useState("")
+  const [email, setEmail] = useState("")
+  const [password, setPassword] = useState("")
   const router = useRouter();
-  const handleSubmit = async (e) => {
+  const handleSubmit = async (e : React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    const username = e.target[0].value;
-    const email = e.target[1].value;
-    const password = e.target[2].value;
-
     if (!username || !email || !password)
       return alert("Please fill all the fields");
 
@@ -41,9 +40,9 @@ const Page = () => {
         <p className="text-red-500 mx-auto">Error occured while registering</p>
       )}
       <form action="" className="flex flex-col gap-4" onSubmit={handleSubmit}>
-        <input type="text" className="auth-input" placeholder="Username" />
-        <input type="email" className="auth-input" placeholder="Email" />
-        <input type="password" className="auth-input" placeholder="Password" />
+        <input type="text" className="auth-input" value={username} placeholder="Username" onChange={(e)=>setUsername(e.target.value)} />
+        <input type="email" className="auth-input" value={email} placeholder="Email" onChange={(e)=>setEmail(e.target.value)}/>
+        <input type="password" className="auth-input" value={password} placeholder="Password" onChange={(e)=>setPassword(e.target.value)} />
         <Button name="Register" className="btn-primary w-full py-3 text-lg" />
 
         <Link href="/dashboard/login" className="mx-auto">
