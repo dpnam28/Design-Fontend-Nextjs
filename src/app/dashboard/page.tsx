@@ -4,7 +4,7 @@ import React from "react";
 import useSWR, { mutate } from "swr";
 import { useSession } from "next-auth/react";
 import { useRouter } from "next/navigation";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import Image from "next/image";
 
 type PostType = {
@@ -17,6 +17,9 @@ type PostType = {
 const Page = () => {
   const session = useSession();
   const router = useRouter();
+  const [title, setTitle] = useState("");
+  const [image, setImage] = useState("");
+  const [description, setDescription] = useState("");
   useEffect(() => {
     if (session.status === "unauthenticated") {
       router.push("/dashboard/login");
@@ -27,11 +30,8 @@ const Page = () => {
     fetch(...args).then((res) => res.json());
   const { data, isLoading } = useSWR<PostType[]>(`/api/posts`, fetcher);
 
-  const handleSubmit = async (e: any) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    const title = e.target[0].value;
-    const image = e.target[1].value;
-    const description = e.target[2].value;
 
     try {
       await fetch(`/api/posts`, {
@@ -45,9 +45,9 @@ const Page = () => {
           image,
         }),
       });
-      e.target[0].value = "";
-      e.target[1].value = "";
-      e.target[2].value = "";
+      setTitle("");
+      setImage("");
+      setDescription("");
       mutate(`/api/posts`);
     } catch (error) {
       console.log(error);
@@ -111,15 +111,21 @@ const Page = () => {
               type="text"
               className="py-2 px-4 w-100 text-xl border border-black dark:border-gray-500 rounded-sm placeholder:text-base"
               placeholder="Title"
+              value={title}
+              onChange={(e) => setTitle(e.target.value)}
             />
             <input
               type="text"
               className="py-2 px-4 w-100 text-xl border border-black dark:border-gray-500 rounded-sm placeholder:text-base"
               placeholder="Image"
+              value={image}
+              onChange={(e) => setImage(e.target.value)}
             />
             <textarea
               className="p-4 w-100 h-50 border border-black rounded-sm dark:border-gray-500"
               placeholder="Description"
+              value={description}
+              onChange={(e) => setDescription(e.target.value)}
             ></textarea>
             <button className="btn-primary w-30">Post</button>
           </form>
