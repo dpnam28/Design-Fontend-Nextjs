@@ -2,10 +2,7 @@ import { NextResponse } from "next/server";
 import connect from "@/utils/db";
 import Post from "@/models/Post";
 
-export const GET = async (req: Request) => {
-  const url = new URL(req.url);
-
-  const user = url.searchParams.get("user");
+export const GET = async () => {
   try {
     await connect();
 
