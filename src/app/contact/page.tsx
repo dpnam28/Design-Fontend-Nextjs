@@ -25,16 +25,16 @@ const page = () => {
         <form action="" className="w-1/2 flex flex-col gap-5">
           <input
             type="text"
-            className="py-2 px-4 w-100 text-xl border border-black rounded-sm placeholder:text-base"
+            className="py-2 px-4 w-100 text-xl border border-black dark:border-gray-500 rounded-sm placeholder:text-base"
             placeholder="Name"
           />
           <input
             type="email"
-            className="py-2 px-4 w-100 text-xl border border-black rounded-sm placeholder:text-base"
+            className="py-2 px-4 w-100 text-xl border border-black dark:border-gray-500 rounded-sm placeholder:text-base"
             placeholder="Email"
           />
           <textarea
-            className="p-2 w-100 h-50 border border-black rounded-sm"
+            className="p-4 w-100 h-50 border border-black rounded-sm dark:border-gray-500"
             placeholder="Message"
           ></textarea>
           <Button name="Send" link="/" className="btn-primary" />
