@@ -46,7 +46,7 @@ const Page = () => {
         <input type="password" className="auth-input" placeholder="Password" />
         <Button name="Register" className="btn-primary w-full py-3 text-lg" />
 
-        <Link href="" className="mx-auto">
+        <Link href="/dashboard/login" className="mx-auto">
           <span className="text-login">Log in</span> with an existing account
         </Link>
       </form>

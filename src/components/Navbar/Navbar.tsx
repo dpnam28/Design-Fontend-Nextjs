@@ -1,8 +1,10 @@
+"use client";
+
 import Link from "next/link";
 import React from "react";
-import Button from "../Button/Button";
 import DarkModeToggle from "../DarkModeToggle/DarkModeToggle";
-
+import { signOut, useSession } from "next-auth/react";
+import Button from "../Button/Button";
 const links = [
   { id: 5, name: "Portfolio", path: "/portfolio" },
   { id: 4, name: "Blog", path: "/blog" },
@@ -12,6 +14,7 @@ const links = [
 ];
 
 const Navbar = () => {
+  const session = useSession();
   return (
     <div className="flex justify-between items-center w-full py-4">
       <Link href={"/"}>
@@ -26,12 +29,13 @@ const Navbar = () => {
               {link.name}
             </Link>
           ))}
-
-          <Button
-            name="Login"
-            link="/dashboard/login"
-            className="btn-primary"
-          />
+          {session.status === "authenticated" && (
+            <Button
+              name="Sign Out"
+              onClick={() => signOut()}
+              className="btn-primary"
+            />
+          )}
         </div>
       </div>
     </div>
